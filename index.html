@@ -1,0 +1,156 @@
+<html>
+<head>
+    
+
+<script type="text/javascript" src="lib/jquery-1.11.2.js"></script> 
+
+<!-- 
+<script type="text/javascript"
+    src="http://ajax.microsoft.com/ajax/jquery/jquery-1.9.1.min.js">
+</script>
+-->
+<script>
+    function Parent(username){
+        this.username=username;
+        this.sayHello=function(){
+            alert(this.username);
+        }
+    }
+    
+    function Child(username,password){
+        Parent.call(this,username);
+        this.password=password;
+        this.sayWord=function(){
+            alert(this.password);
+        }
+    }
+    
+    function combo(msg){
+        var arr=msg.split("-");
+        for(var i=1;i<arr.length;i++){
+            arr[i]=arr[i].charAt(0).toUpperCase()+arr[i].substr(1,arr[i].length-1);
+        }
+        msg=arr.join("");
+        return msg;
+    }
+    
+    function deRepeat(){
+                var newArr=[];
+                var obj=[];
+                var index=0;
+                var l=arr.length;
+                for(var i=0;i<l;i++){
+                    if(obj[arr[i]]==undefined)
+                      {
+                        obj[arr[i]]=1;
+                        newArr[index++]=arr[i];
+                      }
+                    else if(obj[arr[i]]==1)
+                      continue;
+                }
+                return newArr;
+
+            }
+    
+    function ff()
+    {
+        var ul = document.getElementById("test");
+        var li = document.createElement("li");
+        li.appendChild(document.createTextNode("Four"));
+        ul.appendChild(li);
+    }
+
+    $(document).ready(function() {
+        $('li').click(function() {
+            var index = $(this).index();
+            alert(index);
+        })
+    });
+    
+</script>
+<!--
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+if (typeof jQuery == 'undefined')
+{
+  document.write(unescape("%3Cscript src='lib/jquery-1.11.2.js' type='text/javascript'%3E%3C/script%3E"));
+}
+</script>
+    
+<script>
+    
+//$("*").css("border", "2px dotted red");
+    
+$(document).ready(function(){
+  $("button1").click(function(){
+    alert("Value: " + $("#inputField").val());
+  });
+});
+
+$(document).ready(function () {
+  $('ul').delegate('li', 'click', function () {
+    $(this).hide();
+  });
+});
+
+    
+
+/*  
+$( window ).load(function() {
+        console.log( "window loaded" );
+    });
+*/
+  
+function copyText()
+{
+  document.getElementById('field2').value = document.getElementById('field1').value;
+}
+
+function fadd(){
+    var foo = document.getElementById('button3');
+    foo.addEventListener('click', function (e) {
+    this.style.color = 'red';
+    e.preventDefault();
+    });
+}
+
+</script>
+-->
+</head>
+
+<body>
+   <!-- <h1>aa</h1>
+<p>Name:<input type="text" id="test" value="Mouse"></p>
+    
+<button id="button1">value</button><br/>
+<button id="button2">value</button><br/>
+    
+<input id="inputField" type="text" size="12" /><br/>
+<input value="" id="" class="" >
+<a href="#">herf</a><br/>
+ 
+ 
+    <button id="button3" onclick="Child('1',2)">Copy</button><br>
+    <label>text:</label><input type="text" id="in1" value="a"><br>
+    <label>radio:</label><input type="radio" id="in2" value="a"><br>
+    <label>checkbox:</label><input type="checkbox" id="in2" value="a"><br>
+    <label>password:</label><input type="password" id="in2" value="a"><br>
+    <label>date:</label><input type="date" id="in2" value="a"><br>
+    <label>file:</label><input type="file" id="in2" value="a"><br>
+    <label>email:</label><input type="email" id="in2" value="a"><br>
+    <label>submit:</label><input type="submit" id="in2" value="a"><br>
+    <label>search:</label><input type="search" id="in2" value="a"><br>
+    
+
+    <label>search:</label><input type="" id="in2" value="a"><br>
+--> 
+    
+<ul id="test">
+<li>1111</li>
+<li>2222</li>
+<li>3333</li>
+</ul>
+  
+</body>
+
+</html>
